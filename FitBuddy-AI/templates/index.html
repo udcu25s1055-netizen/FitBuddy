@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitBuddy</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">AI fitness coach</p>
+          <h1>FitBuddy</h1>
+          <p class="subtitle">Build a personalized 7-day workout plan based on your goals.</p>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="card form-card">
+          <h2>Create your plan</h2>
+          <form id="planForm">
+            <label>
+              Goal
+              <input type="text" id="goal" value="Build muscle and improve overall fitness" required />
+            </label>
+
+            <div class="two-col">
+              <label>
+                Experience
+                <select id="experience">
+                  <option>Beginner</option>
+                  <option selected>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </label>
+
+              <label>
+                Days / Week
+                <input type="number" id="days_per_week" min="2" max="7" value="4" />
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                Minutes / Session
+                <input type="number" id="minutes_per_session" min="20" max="90" value="45" />
+              </label>
+
+              <label>
+                Equipment
+                <input type="text" id="equipment" value="Dumbbells and bodyweight" />
+              </label>
+            </div>
+
+            <label>
+              Focus Areas
+              <input type="text" id="focus_areas" value="Strength and conditioning" />
+            </label>
+
+            <label>
+              Notes
+              <textarea id="notes" rows="3">Want a balanced plan with recovery days.</textarea>
+            </label>
+
+            <button type="submit">Generate plan</button>
+          </form>
+        </section>
+
+        <section class="card result-card">
+          <h2>Your plan</h2>
+          <div id="result">
+            <p class="empty-state">Fill out the form and generate a plan.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
